@@ -4,19 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>排班表</title>
-<script>
-// 拦截Netlify右下角badge iframe，放在最前面优先执行
-const obs = new MutationObserver((list) => {
-  for(const m of list) {
-    for(const n of m.addedNodes) {
-      if(n.tagName === 'IFRAME' && n.src?.includes('netlify-badge')) {
-        n.remove();
-      }
-    }
-  }
-});
-obs.observe(document.documentElement, {childList:true, subtree:true});
-</script>
 <style>
 html{-webkit-text-size-adjust:100%}
 body{font-family:Arial;margin:0;background:#fce4ec;color:#4a2c3a;padding:10px 8px}
